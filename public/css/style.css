@@ -1,0 +1,49 @@
+header {
+  display: inline-block;
+  color: darkblue; 
+  border: 20%;
+  line-height: 20px;
+  margin: auto;
+  width: 100%;
+  background-color: #0846;
+  text-align: center;
+}
+header a {
+  padding-bottom: 10%;
+}
+header form{
+  padding-bottom: 1%;
+}
+
+body{
+  display: inline-block;
+  color: brown; 
+  border: 20%;
+  margin: auto;
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;"
+}
+
+.pointer {
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+}
+
+.inline {
+  display: block;
+  margin-left: 12%;
+  padding-left: 10%;
+  width: 50%;
+}
+
+footer {
+  display: inline-block;
+  color: darkgreen; 
+  border: 20%;
+  margin: auto;
+  width: 100%;
+  background-color: #0846;
+  text-align: center;
+}
