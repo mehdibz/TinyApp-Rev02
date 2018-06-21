@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+    <header>
+        <% include ./partials/_header %>
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+    </header>
+</head>
+<body>
+  <a href="/urls/new">Create a New Short URL</a><br><br>
+  <br><br>
+    
+     <table  class="inline">
+      <tr>
+        <th>Short URL</th>&nbsp&nbsp&nbsp
+        <th>Long URL</th>&nbsp&nbsp&nbsp
+      </tr>
+
+      <% shortUrlList.forEach((links)=>{ %>
+                
+      <tr>
+        <td><a href="/u/<%=links.shortURL %>" target="_blank">http://localhost:8080/<%= links.shortURL %></a>
+          <input type="text" name="upUrl" value="<%= links.longURL %>"></td>
+
+        <td><form action="/urls/<%=links.shortURL%>/edit" method="post"><button type="submit">EDIT</button></form></td>
+        <td><form action="/urls/<%=links.shortURL%>/delete" method="post"><button type="submit">DELETE</button></form></td>
+      </tr>
+      <% }); %>
+    </table>
+  <br><br><br><br><br><br><br><br><br><br>
+  <%- include('partials/footer') %>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title style="size:40px">TinyApp</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<header>
+  <p style=" font-size:40px;" >TinyApp</p>
+  <% if(userINFO.length !== 0) { %>
+      <div style=" display: inline, width: 60%;">
+        <% if (btn_status.login_btn) { %>
+            <form method="GET" action="/login">
+              <input class="pointer" type="submit" value="Login">
+            </form>
+        <% } if (btn_status.reg_btn) { %>
+            <form method="GET" action="/register">
+              <input class="pointer" type="submit" value="Register">
+            </form>
+        <% } %>
+      </div>
+  <%} if(btn_status.logout_btn) { %>
+   <p style="font-size:15px;"><%="User logged in as " + userINFO['email']%></p>
+      <form method="POST" action="/logout">
+      <input class="pointer" type="submit" value="logout">
+    </form>
+  <% } %>
+</header>
+</html>
