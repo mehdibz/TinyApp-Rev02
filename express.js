@@ -98,7 +98,6 @@ app.get("/users.json", (req, res) => {
 // entry point for get /login
 app.get("/login", (req, res) => {
     tempVar={
-      shortUrlList: "",
       userINFO: {email: 'guest'},
       btn_status: {login_btn: false, reg_btn: true, logout_btn: false}
     }
@@ -154,7 +153,6 @@ app.get("/urls/:id", (req, res) => {
 // entry point for get /register
 app.get("/register", (req, res) => {
     tempVar={
-      shortUrlList: "",
       userINFO: {email: 'guest'},
       btn_status: {login_btn: true, reg_btn: false, logout_btn: false}
     }
@@ -177,13 +175,16 @@ app.post("/urls", (req, res) => {
 
 // entry point for post /urls/:id/edit
 app.post("/urls/:id/edit", (req, res) => {
-
-  let shortURL = req.params.id;
   let longURL = req.body.upUrl;
+  let shortURL = req.params.id;
   if (!longURL.startsWith("http://") && !longURL.startsWith("https://")) {
     longURL = `http://${longURL}`;
   }
-  urlDatabase[shortURL] = {shortURL: shortURL, longURL: longURL, userID: req.session.userID};
+  urlDatabase[shortURL] = {
+                            shortURL: shortURL, 
+                            longURL: longURL, 
+                            userID: req.session.userID
+                          };
   res.redirect(302, `/urls/${shortURL}`);
 });
 
