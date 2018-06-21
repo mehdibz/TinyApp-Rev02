@@ -139,7 +139,8 @@ app.get("/urls/:id", (req, res) => {
           userINFO : {
                       shortURL: urlDatabase[req.params.id].shortURL, 
                       longURL: urlDatabase[req.params.id].longURL, 
-                      userID: req.session.userID
+                      userID: req.session.userID,
+                      email: usersDatabase[req.session.userID].email
                     },
           btn_status: {login_btn: false, reg_btn: false, logout_btn: true}
         };
