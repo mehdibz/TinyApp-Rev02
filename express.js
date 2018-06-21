@@ -19,7 +19,7 @@ var urlDatabase = {
   "b2xVn2": {shortURL: 'b2xVn2', longURL: "http://www.lighthouselabs.ca", userID: 'user1'},
   "bwrVn2": {shortURL: 'b2xVn2', longURL: "http://www.yahoo.ca",          userID: 'user1'},
   "9sm5xK": {shortURL: '9sm5xK', longURL: "http://www.google.com",        userID: 'user2'},
-  "9smef4": {shortURL: '9smef4', longURL: "http://www.msn.com",           userID: 'user2'},
+  "7hmef4": {shortURL: '7hmef4', longURL: "http://www.msn.com",           userID: 'user2'},
 };
 
 // database to store users INFO
@@ -189,8 +189,7 @@ app.post("/urls/:id/edit", (req, res) => {
 
 // entry point for post /urls/:id/delete
 app.post("/urls/:id/delete", (req, res) => {
-  let shortURL = req.params.id;
-  delete urlDatabase[shortURL];
+  delete urlDatabase[req.params.id];
   res.redirect(302, `/urls`);
 });
 
@@ -239,7 +238,7 @@ app.post("/logout", (req, res) => {
 // redirect tinylink to longURL from database
 app.get("/u/:id", (req, res) => {
   if (!urlDatabase[req.params.id]) {
-    res.status(404).send("The broken Link");
+    res.status(404).send("Link is broken ");
   } else {
     res.redirect(302, urlDatabase[req.params.id].longURL);
   }
