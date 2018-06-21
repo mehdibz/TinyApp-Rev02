@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+  <% include ./partials/_header %>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+ 	<form method="POST" action="/register" style="display: inline-table;">
+    	<h1>Registration Page !</h1>
+    	<table >
+    		<tr>
+    			<td><label  style="margin-left: 9%;">Email:<input type="email" name="email" placeholder='username@email.com'></label></td>
+    		</tr>
+    		<tr>
+    			<td><label>Password:<input type="password" name="password" value=""></label></td>
+     		</tr>
+    		<tr>
+    			<td><button class="pointer" type="submit">Register</button></td>
+    		</tr>
+    	</table>
+    </form>   
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <%- include('partials/footer') %>   
+</body>
+</html>
