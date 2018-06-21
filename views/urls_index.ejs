@@ -20,11 +20,21 @@
       <% shortUrlList.forEach((links)=>{ %>
                 
       <tr>
-        <td><a href="/u/<%=links.shortURL %>" target="_blank">http://localhost:8080/<%= links.shortURL %></a>
-          <input type="text" name="upUrl" value="<%= links.longURL %>"></td>
+        <td>
+          <a href="/u/<%=links.shortURL %>" target="_blank">http://localhost:8080/<%= links.shortURL %></a>
+        </td>
 
-        <td><form action="/urls/<%=links.shortURL%>/edit" method="post"><button type="submit">EDIT</button></form></td>
-        <td><form action="/urls/<%=links.shortURL%>/delete" method="post"><button type="submit">DELETE</button></form></td>
+        <td>
+            <form action="/urls/<%=links.shortURL%>/edit" method="post">
+              <input type="text" name="upUrl" value="<%= links.longURL %>">
+              <button type="submit">EDIT</button>
+            </form>
+        </td>
+        <td>
+          <form action="/urls/<%=links.shortURL%>/delete" method="post">
+            <button type="submit">DELETE</button>
+          </form>
+        </td>
       </tr>
       <% }); %>
     </table>
