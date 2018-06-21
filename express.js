@@ -189,11 +189,9 @@ app.post("/urls/:id/edit", (req, res) => {
 
 // entry point for post /urls/:id/delete
 app.post("/urls/:id/delete", (req, res) => {
-  if (checkUser(req.session.userID)) {
-    res.redirect(302, "urls");
-  }else{
-    res.redirect(302, "login");
-  }
+  let shortURL = req.params.id;
+  delete urlDatabase[shortURL];
+  res.redirect(302, `/urls`);
 });
 
 // entry point for post /register
