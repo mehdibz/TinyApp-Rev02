@@ -4,7 +4,7 @@ TinyApp is a full stack web appliction built with Node and Express that allows u
 
 ## Final Product
 
-!["Registration"](https://github.com/mehdibz/TinyApp-Rev02/tree/master/docs/Registration.png)
+!["Registration"](https://github.com/mehdibz/TinyApp-Rev02/blob/master/docs/Registration.png)
 !["URLs Index"](https://github.com/mehdibz/TinyApp-Rev02/tree/master/docs/url_index.png)
 !["URLs Update"](https://github.com/mehdibz/TinyApp-Rev02/tree/master/docs/url_show.png)
 
